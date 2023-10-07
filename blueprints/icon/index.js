@@ -28,10 +28,6 @@ module.exports = {
     if (!icon) {
       return Promise.reject(`Icon is not present in ${iconsPack.name} package`);
     }
-
-    // Promise.reject(
-    //   'You have no one FontAwesome icons package installed!\nTry to install at least one:\nyarn add @fortawesome/free-solid-svg-icons\nyarn add @fortawesome/free-regular-svg-icons\nyarn add @fortawesome/free-brands-svg-icons'
-    // )
   },
 
   async afterInstall(options) {

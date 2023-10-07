@@ -1,11 +1,16 @@
 {
   "name": "ember-awesome-icons",
-  "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.2",
+  "description": "Ember.js addon to use SVG from free Font-Awesome icon packs",
   "keywords": [
+    "ember",
+    "emberjs",
+    "svg icon",
+    "icon font",
+    "ember-cli",
     "ember-addon",
     "font-awesome",
-    "SVG icon component"
+    "fort-awesome"
   ],
   "repository": {
     "type": "git",
