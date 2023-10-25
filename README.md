@@ -5,9 +5,8 @@ Ember.js addon to use SVG from free Font-Awesome icon packs
 
 ## Compatibility
 
-* Ember.js v4.4 or above
-* Ember CLI v4.4 or above
 * Node.js v14 or above
+* Ember.js v3.28 or above
 
 
 ## Installation
@@ -23,18 +22,19 @@ Use icon blueprint to generate an icon component:
 ```
 ember generate  <name> <options...>
 
-	name: icon name without a prefix (mandatory) 
+- name: icon name without a prefix (mandatory) 
 
-	options:
+- options:
 
-		--style=[solid | regular | brands]
+	--style=[solid | regular | brands]
+	*default: solid*
 ```
 
 ### Examples
 ```
 ember g icon map	// output: app/components/icons/fas-map.hbs
 ember g icon map --style=regular // output: app/components/icons/far-map.hbs
-ember g icon 500px --style=brands // output: app/components/icons/fab-map.hbs
+ember g icon 500px --style=brands // output: app/components/icons/fab-500px.hbs
 ```
 
 
