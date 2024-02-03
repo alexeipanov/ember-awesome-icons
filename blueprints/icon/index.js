@@ -1,5 +1,7 @@
 'use strict';
 
+const { camelize } = require('ember-cli-string-utils');
+
 const faPackages = [
   { name: '@fortawesome/free-solid-svg-icons', style: 'solid' },
   { name: '@fortawesome/free-regular-svg-icons', style: 'regular' },
@@ -9,7 +11,7 @@ const faPackages = [
 module.exports = {
   description: 'Generate SVG icon component by FontAwesome icon name',
 
-  availableOptions: [{ name: 'style', type: String, default: 'solid' }],
+  availableOptions: [{ name: 'style', type: ['solid', 'regular', 'brands'], default: 'solid' }],
 
   async beforeInstall() {
     let iconsPack = faPackages.find((iconsPack) => {
@@ -23,7 +25,7 @@ module.exports = {
     }
 
     let icons = await import(iconsPack.name);
-    let icon = this.findIcon(icons, this.options.entity.name);
+    let icon = this.findIcon(icons, camelize(this.options.entity.name));
 
     if (!icon) {
       return Promise.reject(`Icon is not present in ${iconsPack.name} package`);
@@ -36,7 +38,7 @@ module.exports = {
     );
 
     let entries = await import(iconsPack.name);
-    let entry = this.findIcon(entries, options.entity.name);
+    let entry = this.findIcon(entries, camelize(this.options.entity.name));
     let { prefix, iconName, icon } = entry;
     let [width, height, aliases, unicode, svgPathData] = icon;
 

@@ -1,6 +1,6 @@
 {
   "name": "ember-awesome-icons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ember.js addon to use SVG from free Font-Awesome icon packs",
   "keywords": [
     "ember",

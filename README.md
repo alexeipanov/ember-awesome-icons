@@ -25,9 +25,8 @@ ember generate  <name> <options...>
 - name: icon name without a prefix (mandatory) 
 
 - options:
-
-	--style=[solid | regular | brands]
-	*default: solid*
+  --style=[solid | regular | brands]
+  default: solid
 ```
 
 ### Examples
