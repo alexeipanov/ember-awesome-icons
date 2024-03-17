@@ -2,13 +2,12 @@
 
 Ember.js addon to use SVG from free Font-Awesome icon packs
 
-[![CI](https://github.com/alexeipanov/ember-awesome-icons/actions/workflows/ci.yml/badge.svg)](https://github.com/alexeipanov/ember-awesome-icons/actions/workflows/ci.yml)
-
+[![Node.js Package](https://github.com/alexeipanov/ember-awesome-icons/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/alexeipanov/ember-awesome-icons/actions/workflows/npm-publish.yml)
 
 ## Compatibility
 
-* Node.js v14 or above
-* Ember.js v3.28 or above
+* Node.js v18 or above
+* Ember.js v4.4 or above
 
 
 ## Installation
@@ -20,7 +19,7 @@ ember install ember-awesome-icons
 
 ## Usage
 
-Use icon blueprint to generate an icon component:
+1. Use icon blueprint to generate an icon component:
 ```
 ember generate  <name> <options...>
 
@@ -30,6 +29,7 @@ ember generate  <name> <options...>
   --style=[solid | regular | brands]
   default: solid
 ```
+2. Use generated component in your templates and components
 
 ### Examples
 ```
@@ -37,7 +37,12 @@ ember g icon map	// output: app/components/icons/fas-map.hbs
 ember g icon map --style=regular // output: app/components/icons/far-map.hbs
 ember g icon 500px --style=brands // output: app/components/icons/fab-500px.hbs
 ```
-
+```
+<Icons::FasMap class="h-20 w-20 fill-sky-500" />
+<Icons::FarMap class="h-20 w-20 fill-sky-500" />
+<Icons::Fab-500px class="h-20 w-20 fill-sky-500" />
+```
+![Awesome Icons](tests/dummy/public/awesome-icons.png)
 
 ## Contributing
 

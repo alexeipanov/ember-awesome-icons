@@ -1,5 +1,7 @@
 'use strict';
 
+const { EOL } = require('os');
+// eslint-disable-next-line n/no-unpublished-require
 const { camelize } = require('ember-cli-string-utils');
 
 const faPackages = [
@@ -11,7 +13,9 @@ const faPackages = [
 module.exports = {
   description: 'Generate SVG icon component by FontAwesome icon name',
 
-  availableOptions: [{ name: 'style', type: ['solid', 'regular', 'brands'], default: 'solid' }],
+  availableOptions: [
+    { name: 'style', type: ['solid', 'regular', 'brands'], default: 'solid' },
+  ],
 
   async beforeInstall() {
     let iconsPack = faPackages.find((iconsPack) => {
@@ -20,7 +24,7 @@ module.exports = {
 
     if (!iconsPack) {
       return Promise.reject(
-        "Unknown style! Available style values are 'solid', 'regular', 'brands'"
+        "Unknown style! Available style values are 'solid', 'regular', 'brands'",
       );
     }
 
@@ -34,17 +38,18 @@ module.exports = {
 
   async afterInstall(options) {
     let iconsPack = faPackages.find(
-      (iconsPack) => iconsPack.style === options.style
+      (iconsPack) => iconsPack.style === options.style,
     );
 
     let entries = await import(iconsPack.name);
     let entry = this.findIcon(entries, camelize(this.options.entity.name));
     let { prefix, iconName, icon } = entry;
+    // eslint-disable-next-line no-unused-vars
     let [width, height, aliases, unicode, svgPathData] = icon;
 
     this.insertIntoFile(
       `app/components/icons/${prefix}-${options.entity.name}.hbs`,
-      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" class="${iconName}" fill="currentColor" ...attributes>\n\t<path d="${svgPathData}" />\n</svg>`
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" class="${iconName}" fill="currentColor" ...attributes>${EOL}\t<path d="${svgPathData}" />${EOL}</svg>`,
     );
   },
 
