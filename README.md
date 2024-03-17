@@ -2,6 +2,8 @@
 
 Ember.js addon to use SVG from free Font-Awesome icon packs
 
+[![CI](https://github.com/alexeipanov/ember-awesome-icons/actions/workflows/ci.yml/badge.svg)](https://github.com/alexeipanov/ember-awesome-icons/actions/workflows/ci.yml)
+
 
 ## Compatibility
 
