@@ -145,6 +145,9 @@ devDependencies:
   stylelint-config-standard:
     specifier: ^34.0.0
     version: 34.0.0(stylelint@15.11.0)
+  stylelint-config-tailwindcss:
+    specifier: ^0.0.7
+    version: 0.0.7(stylelint@15.11.0)(tailwindcss@3.4.1)
   stylelint-prettier:
     specifier: ^4.1.0
     version: 4.1.0(prettier@3.2.5)(stylelint@15.11.0)
@@ -10596,6 +10599,16 @@ packages:
     dependencies:
       stylelint: 15.11.0
       stylelint-config-recommended: 13.0.0(stylelint@15.11.0)
+    dev: true
+
+  /stylelint-config-tailwindcss@0.0.7(stylelint@15.11.0)(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-n2dCWH+0ppr0/by4EYCLWW7g5LU+l4UzUIsYS7xbVHqvm9UWa7UhltNdNiz5NmLF/FmbJR4Yd/v9DuUGvLw1Tg==}
+    peerDependencies:
+      stylelint: '>=13.13.1'
+      tailwindcss: '>=2.2.16'
+    dependencies:
+      stylelint: 15.11.0
+      tailwindcss: 3.4.1
     dev: true
 
   /stylelint-prettier@4.1.0(prettier@3.2.5)(stylelint@15.11.0):
